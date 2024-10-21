@@ -29,7 +29,7 @@
             <div class="col-12">
                 <br>
                 <button class="btn btn-primary btn-sm">Login</button> &nbsp;-&nbsp;
-                <button class="btn btn-success btn-sm"  data-bs-toggle="modal" data-bs-target="#exampleModal">Sign up</button>
+                <button class="btn btn-success btn-sm"  data-bs-toggle="modal" data-bs-target="#exampleModal" id="signupButton">Sign up</button>
                 <hr>
             </div>
             <div class="col-12">
@@ -218,19 +218,24 @@
           <div class="row">
             <div class="col-12 inner">
                 <div class="form-group">
-                    <label for="username">Username</label>
-                    <input class="form-control" type="email" id="username" placeholder="Ex: abc@gmail.com">
+                    <label for="registerUsername">Username</label>
+                    <input class="form-control" type="email" id="registerUsername" placeholder="Ex: abc@gmail.com">
                 </div>
             </div>
             <div class="col-12 inner">
                 <div class="form-group">
-                    <label for="username">Password</label>
-                    <input class="form-control" type="password" id="password">
+                    <label for="registerPassword">Password</label>
+                    <input class="form-control" type="registerPassword" id="password">
                 </div>
+            </div>
+            <div class="col-12">
+                <br>
+                <div class="alert alert-primary" id="successRegisterAlert">...</div>
+                <div class="alert alert-danger" id="errorRegisterAlert">...</div>
             </div>
             <div class="col-12 inner">
                 <br>
-                <button class="col-12 btn btn-primary">Register Now</button>
+                <button class="col-12 btn btn-primary" id="registerNowButton">Register Now</button>
             </div>
           </div>
         </div>

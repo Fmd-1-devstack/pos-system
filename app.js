@@ -37,3 +37,18 @@ document.getElementById('ordersTab').addEventListener('click',function(event){
   document.getElementById('productsTab').classList.remove('active');
   document.getElementById('productsTab').classList.remove('active');
 });
+//============Register with email & password
+document.getElementById('signupButton').addEventListener('click', function(event){
+  document.getElementById('successRegisterAlert').style.display='none';
+  document.getElementById('errorRegisterAlert').style.display='none';
+});
+
+document.getElementById('registerNowButton').addEventListener('çlick', function(event){
+  let email = document.getElementById('registerUsername').value;
+  let password = document.getElementById('registerPassword').value;
+
+  console.log(email);
+  console.log(password);
+});
+
+//============Register with email & password
