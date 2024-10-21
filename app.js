@@ -43,12 +43,14 @@ document.getElementById('signupButton').addEventListener('click', function(event
   document.getElementById('errorRegisterAlert').style.display='none';
 });
 
-document.getElementById('registerNowButton').addEventListener('çlick', function(event){
+function register(){
   let email = document.getElementById('registerUsername').value;
   let password = document.getElementById('registerPassword').value;
 
-  console.log(email);
-  console.log(password);
-});
+  if(!email && !password){
+    alert('please provide the email and usename');
+  }
+  
+}
 
 //============Register with email & password
