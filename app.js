@@ -65,6 +65,12 @@ document.getElementById('signupButton').addEventListener('click', function(event
 });
 
 const register=()=>{
+
+  
+
+  document.getElementById('successRegisterAlert').style.display='none';
+  document.getElementById('errorRegisterAlert').style.display='none';
+
   let email = document.getElementById('registerUsername').value;
   let password = document.getElementById('registerPassword').value;
 
@@ -73,11 +79,15 @@ const register=()=>{
     return;
   }
 
-  createUserWithEmailAndPassword(email, password)
+  createUserWithEmailAndPassword(auth, email, password)
   .then((userCredentials)=>{
     console.log(userCredentials);
+    document.getElementById('successRegisterAlert').innerText='success!, please close the dialog and log in';
+    document.getElementById('successRegisterAlert').style.display='block';
   }).catch((error)=>{
-    console.log(error);
+    document.getElementById('errorRegisterAlert').innerText=error.message;
+    document.getElementById('errorRegisterAlert').style.display='block';
+    console.log(error.message);
   })
 }
 
