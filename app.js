@@ -1,6 +1,6 @@
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
         import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
-        import { getAuth,createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
+        import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
         import { getFirestore, doc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
         import { getStorage, ref, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-storage.js';
 
@@ -65,9 +65,6 @@ document.getElementById('signupButton').addEventListener('click', function(event
 });
 
 const register=()=>{
-
-  
-
   document.getElementById('successRegisterAlert').style.display='none';
   document.getElementById('errorRegisterAlert').style.display='none';
 
@@ -91,7 +88,27 @@ const register=()=>{
   })
 }
 
+const login=()=>{
+ 
+  let email = document.getElementById('username').value;
+  let password = document.getElementById('password').value;
 
-window.register=register;
+  if(!email && !password){ // regex, info@abc.com, abc@gmail.com, /, %, $
+    alert('please provide the email and usename');
+    return;
+  }
+
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredentials)=>{
+      console.log(userCredentials);
+      alert('Welcome..'); 
+  }).catch((error)=>{
+    alert(error.message); 
+  })
+}
+
+
+window.register = register;
+window.login = login;
 
 //============Register with email & password
