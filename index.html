@@ -175,33 +175,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <script type="module">
-
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
-        import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
-        import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
-        import { getFirestore, doc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
-        import { getStorage, ref, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-storage.js';
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyCK9tcze0I01uSWeNayqUmdY490MiFEVmw",
-            authDomain: "pos-system-c06a5.firebaseapp.com",
-            projectId: "pos-system-c06a5",
-            storageBucket: "pos-system-c06a5.appspot.com",
-            messagingSenderId: "509587287340",
-            appId: "1:509587287340:web:85353adb426ae469701089",
-            measurementId: "G-RD556ECTDR"
-        };
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
-        const storage = getStorage(app);
-
-
-
-    </script>
-
-    <script src="app.js"></script>
+    <script src="app.js" type="module"></script>
 
 
     <!-- signup dialog -->
