@@ -23,7 +23,7 @@
 document.getElementById('customerContext').style.display='block';
 document.getElementById('ordersContext').style.display='none';
 document.getElementById('productsContext').style.display='none';
-
+document.getElementById('loginWrapper').style.display='none';
 //========== manage tabs===============
 
 document.getElementById('customerTab').addEventListener('click',function(event){
@@ -100,11 +100,28 @@ const login=()=>{
 
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredentials)=>{
+    let user =userCredentials.user;
       console.log(userCredentials);
+      document.cookie=`authToken=${user.accessToken}; path=/; max-age=3600`;
       alert('Welcome..'); 
+      document.getElementById('loginWrapper').style.display='none';
   }).catch((error)=>{
     alert(error.message); 
   })
+}
+
+function getCookie(name){
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if(parts.length===2) return parts.pop().split(';').shift();
+  return null;
+}
+
+const authToken = getCookie('authToken');
+if(authToken){
+  document.getElementById('loginWrapper').style.display='none';
+}else{
+  document.getElementById('loginWrapper').style.display='block';
 }
 
 
